@@ -1,0 +1,111 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require 'masonry/transitions'
+ *= require_self
+ */
+
+ @import "bulma";
+
+.navbar-brand .title {
+	color: white;
+}
+
+// round images
+.image {
+	border-radius: 50%;
+	img {
+		border-radius: 50%;
+	}
+}
+.notification:not(:last-child) {
+	margin-bottom: 0;
+}
+
+#masonry-container {
+  background: #FFF;
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  clear: both;
+  margin: 0 auto;
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
+}
+#masonry-container .box{
+  width: 400px;
+  cursor: pointer;
+  transition: .3s background-color;
+}
+#masonry-container .box:hover {
+    background-color: #246b9a17;
+}
+#masonry-container .box.ar-form-box{
+  width: 840px;
+}
+.section {
+    padding: 3rem 1rem;
+    .container{
+      width: 100%;
+      max-width: 100%;
+    }
+}
+.columns.centered { margin: 0 auto; }
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
+
+
+
+.ar-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  max-width: 100%;
+  height: auto;
+  max-height: 100%;
+  z-index: 1010;
+  padding: 20px;
+  background-color: rgba(255,255,255,1);
+  border-radius: 5px;
+  color: black;
+}
+.modal-overlay {
+
+  /* recommendation:
+     don't focus on the number "1000" here, but rather,
+     you should have a documented system for z-index and
+     follow that system. This number should be pretty
+     high on the scale in that system.
+  */
+  z-index: 1000;
+  background-color: rgba(0,0,0,.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  font-size: 25px;
+}
+.ar-icon {
+  position: fixed;
+      right: 10px;
+      top: 0px;
+      font-size: 35px;
+      color: white;
+}
